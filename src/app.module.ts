@@ -12,7 +12,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
               port: 3306,
               username: 'root',
               password: '983453069',
-              database: 'imdb_movies123',
+              database: 'imdb_movies',
               entities: [],
               synchronize: true,
             }),

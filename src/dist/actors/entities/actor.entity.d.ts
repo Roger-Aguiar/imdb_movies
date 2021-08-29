@@ -1,5 +1,4 @@
-export class CreateActorDto 
-{
+export declare class Actor {
     id: number;
     actor: string;
     born: string;
