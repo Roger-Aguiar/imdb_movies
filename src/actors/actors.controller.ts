@@ -35,6 +35,6 @@ export class ActorsController
   @Delete(':id')
   remove(@Param('id') id: string) 
   {
-    return this.actorsService.remove(+id);
+    return this.actorsService.remove(id);
   }
 }
