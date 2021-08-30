@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ActorsModule } from './actors/actors.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import {Actor} from './actors/entities/actor.entity'
 
 @Module({
   imports: [ActorsModule, 
@@ -13,7 +14,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
               username: 'root',
               password: '983453069',
               database: 'imdb_movies',
-              entities: [],
+              entities: [Actor],
               synchronize: true,
             }),
           ],

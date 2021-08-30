@@ -1,11 +1,16 @@
 import { Injectable } from '@nestjs/common';
 import { CreateActorDto } from './dto/create-actor.dto';
 import { UpdateActorDto } from './dto/update-actor.dto';
-import { Actor } from './interfaces/actor.interface';
+//import { Actor } from './interfaces/actor.interface';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import {Actor} from './entities/actor.entity';
 
 @Injectable()
 export class ActorsService 
 {  
+  constructor(@InjectRepository(Actor) private actorRepository: Repository<Actor>){}
+
   private readonly actors: Actor[] = [
     {
       "id": 1,
