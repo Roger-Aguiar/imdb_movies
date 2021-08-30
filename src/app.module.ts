@@ -5,9 +5,7 @@ import { ActorsModule } from './actors/actors.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
-  imports: [ActorsModule, 
-            TypeOrmModule.forRoot(),
-          ],
+  imports: [ActorsModule, TypeOrmModule.forRoot()],
   controllers: [AppController],
   providers: [AppService],
 })
