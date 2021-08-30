@@ -2,9 +2,9 @@ import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Actor 
-{
+{    
     @PrimaryGeneratedColumn()
-    id: number;
+    id?: number;
     @Column()
     actor: string;
     @Column()
@@ -18,5 +18,5 @@ export class Actor
     @Column()
     as_producer: number;
     @Column()
-    as_director: number;
+    as_director: number;    
 }
