@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Body, Put, Param, Delete } from '@nestjs/common';
 import { ActorsService } from './actors.service';
-import { CreateActorDto } from './dto/create-actor.dto';
-import { UpdateActorDto } from './dto/update-actor.dto';
+import { NewActorDto } from './dto/new-actor.dto';
+import { ActorDto } from './dto/actor.dto';
 
 @Controller('actors')
 export class ActorsController 
@@ -9,32 +9,32 @@ export class ActorsController
   constructor(private readonly actorsService: ActorsService) {}
 
   @Post()
-  create(@Body() createActorDto: CreateActorDto) 
+  create(@Body() newActorDto: NewActorDto) 
   {    
-    return this.actorsService.create(createActorDto);
+    return this.actorsService.create(newActorDto);
   }
 
   @Get()
-  findAll() 
+  read() 
   {
-    return this.actorsService.findAll();
+    return this.actorsService.read();
   }
 
   @Get(':id')
-  findOne(@Param('id') id: number) 
+  readById(@Param('id') id: number) 
   {
-    return this.actorsService.findOne(+id);
+    return this.actorsService.readById(+id);
   }
 
   @Put(':id')
-  update(@Param('id') id: string, @Body() updateActorDto: UpdateActorDto) 
+  update(@Param('id') id: string, @Body() actorDto: ActorDto) 
   {
-    return this.actorsService.update(+id, updateActorDto);
+    return this.actorsService.update(+id, actorDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) 
+  delete(@Param('id') id: string) 
   {
-    return this.actorsService.remove(id);
+    return this.actorsService.delete(id);
   }
 }

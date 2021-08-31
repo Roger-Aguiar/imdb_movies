@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { CreateActorDto } from './dto/create-actor.dto';
-import { UpdateActorDto } from './dto/update-actor.dto';
+import { NewActorDto } from './dto/new-actor.dto';
+import { ActorDto } from './dto/actor.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import {Actor} from './entities/actor.entity';
@@ -10,26 +10,26 @@ export class ActorsService
 {  
   constructor(@InjectRepository(Actor) private actorRepository: Repository<Actor>){}
   
-  async create(createActorDto: CreateActorDto)
+  async create(newActorDto: NewActorDto)
   {
-     this.actorRepository.save(createActorDto);    
+     this.actorRepository.save(newActorDto);    
   }
 
-  findAll(): Promise<Actor[]> 
+  read(): Promise<Actor[]> 
   {    
     return this.actorRepository.find();
   }
 
-  findOne(id: number): Promise<Actor>
+  readById(id: number): Promise<Actor>
   {
     return this.actorRepository.findOne(id);    
   }
 
-  async update(id: number, updateActorDto: UpdateActorDto) 
+  async update(id: number, actorDto: ActorDto) 
   {
-    if(updateActorDto.id == id)
+    if(actorDto.id == id)
     {
-      this.actorRepository.save(updateActorDto);
+      this.actorRepository.save(actorDto);
     }
     else
     {
@@ -37,7 +37,7 @@ export class ActorsService
     }        
   }
   
-  async remove(id: string) : Promise<void>
+  async delete(id: string) : Promise<void>
   {            
     await this.actorRepository.delete(id);               
   }
