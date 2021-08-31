@@ -18,5 +18,9 @@ export class Actor
     @Column()
     as_producer: number;
     @Column()
-    as_director: number;    
+    as_director: number;   
+    @Column()
+    register_date?: string; 
+    @Column()
+    last_update?: string;  
 }
