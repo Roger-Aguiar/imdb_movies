@@ -1,1 +1,5 @@
-export class NewGenreDto {}
+export class NewGenreDto 
+{
+    id: number;
+    genre: string;
+}
