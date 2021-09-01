@@ -4,35 +4,47 @@ import { Repository } from 'typeorm';
 import { NewMovieDto } from './dto/new-movie.dto';
 import { MovieDto } from './dto/movie.dto';
 import { Movie } from './entities/movie.entity';
-import { NewActorDto } from '../actors/dto/new-actor.dto';
+/*import { NewActorDto } from '../actors/dto/new-actor.dto';
+import { ActorDto } from '../actors/dto/actor.dto';
+import { Actor } from '../actors/entities/actor.entity';
+import { NewGenreDto } from '../genres/dto/new-genre.dto';
+import { GenreDto } from '../genres/dto/genre.dto';
+import { Genre } from '../genres/entities/genre.entity';*/
 
 @Injectable()
 export class MoviesService 
 {
   constructor(@InjectRepository(Movie) private movieRepository: Repository<Movie>){}
 
-  create(newMovieDto: NewMovieDto) 
+  async create(newMovieDto: NewMovieDto) 
   {
-    return 'This action adds a new movie';
+    this.movieRepository.save(newMovieDto);
   }
 
-  read() 
+  read(): Promise<Movie []>
   {
-    return `This action returns all movies`;
+    return this.movieRepository.find();
   }
 
-  readById(id: number) 
+  readById(id: number): Promise<Movie>
   {
-    return `This action returns a #${id} movie`;
+    return this.movieRepository.findOne(id);
   }
 
   update(id: number, movieDto: MovieDto) 
   {
-    return `This action updates a #${id} movie`;
+    if(movieDto.id == id)
+    {
+      this.movieRepository.save(movieDto);
+    }
+    else
+    {
+      return 'Not found movie.';
+    }        
   }
 
-  delete(id: number) 
+  async delete(id: string): Promise<void> 
   {
-    return `This action removes a #${id} movie`;
+    await this.movieRepository.delete(id);
   }
 }
