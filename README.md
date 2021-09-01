@@ -31,6 +31,20 @@
 ```bash
 $ npm install
 ```
+## Configure the ormconfig.json file
+This application uses the MySql database.
+Before running the application, create a database in MySql, you will need the database name to set the ormconfig.json file.
+Open the ormconfig.json file and update it according to the following:
+{
+    "type": "mysql",
+    "host": "localhost",
+    "port": 3306,
+    "username": "Your username",
+    "password": "Your password",
+    "database": "Your database name",
+    "entities": ["dist/**/*.entity{.ts,.js}"],
+    "synchronize": true
+}
 
 ## Running the app
 
