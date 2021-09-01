@@ -8,4 +8,6 @@ export class NewActorDto
     as_actor: number;
     as_producer: number;
     as_director: number;
+    register_date: string;  
+    last_update: string; 
 }

@@ -20,7 +20,7 @@ export class Actor
     @Column()
     as_director: number;   
     @Column()
-    register_date?: string; 
+    register_date: string;  
     @Column()
-    last_update?: string;  
+    last_update: string;    
 }
