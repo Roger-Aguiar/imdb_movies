@@ -1,0 +1,375 @@
+{
+	"info": {
+		"_postman_id": "a9e7f1a6-6796-405b-9d24-0f14db053958",
+		"name": "Imdb_movies",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Actors",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{     \r\n  \"actor\": \"Chris Tucker\",\r\n  \"born\": \"August 31, 1971\",\r\n  \"country\": \"USA\",\r\n  \"imdb_link\": \"https://www.imdb.com/name/nm0000676/?ref_=tt_cl_t_2\",\r\n  \"as_actor\": 23,\r\n  \"as_producer\": 1,\r\n  \"as_director\": 0,\r\n  \"register_date\": \"09/01/2021\",\r\n  \"last_update\": \"09/01/2021\"\r\n}"
+						},
+						"url": {
+							"raw": "{{imdb_url}}/actors",
+							"host": [
+								"{{imdb_url}}"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{imdb_url}}/actors",
+							"host": [
+								"{{imdb_url}}"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"actor\": \"Arnold Schwarzenegger\",\r\n  \"born\": \"July 30, 1947\",\r\n  \"country\": \"Australia\",\r\n  \"imdb_link\": \"https://www.imdb.com/name/nm0000216/\",\r\n  \"as_actor\": 79,\r\n  \"as_producer\": 13,\r\n  \"as_director\": 20\r\n}"
+						},
+						"url": {
+							"raw": "{{imdb_url}}/actors/10",
+							"host": [
+								"{{imdb_url}}"
+							],
+							"path": [
+								"actors",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{imdb_url}}/actors/2",
+							"host": [
+								"{{imdb_url}}"
+							],
+							"path": [
+								"actors",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{imdb_url}}/actors/2",
+							"host": [
+								"{{imdb_url}}"
+							],
+							"path": [
+								"actors",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movies",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{     \r\n  \"actor\": \"Jackie Chan\",\r\n  \"born\": \"April 7, 1954\",\r\n  \"country\": \"Hong Kong\",\r\n  \"imdb_link\": \"https://www.imdb.com/name/nm0000329/\",\r\n  \"as_actor\": 140,\r\n  \"as_producer\": 64,\r\n  \"as_director\": 18,\r\n  \"register_date\": \"08/31/2021\"\r\n}"
+						},
+						"url": {
+							"raw": "{{imdb_url}}/movies",
+							"host": [
+								"{{imdb_url}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{imdb_url}}/movies",
+							"host": [
+								"{{imdb_url}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"actor\": \"Arnold Schwarzenegger\",\r\n  \"born\": \"July 30, 1947\",\r\n  \"country\": \"Australia\",\r\n  \"imdb_link\": \"https://www.imdb.com/name/nm0000216/\",\r\n  \"as_actor\": 79,\r\n  \"as_producer\": 13,\r\n  \"as_director\": 20\r\n}"
+						},
+						"url": {
+							"raw": "{{imdb_url}}/movies/10",
+							"host": [
+								"{{imdb_url}}"
+							],
+							"path": [
+								"movies",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{imdb_url}}/movies/9",
+							"host": [
+								"{{imdb_url}}"
+							],
+							"path": [
+								"movies",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{imdb_url}}/movies/2",
+							"host": [
+								"{{imdb_url}}"
+							],
+							"path": [
+								"movies",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Genres",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{     \r\n  \"actor\": \"Jackie Chan\",\r\n  \"born\": \"April 7, 1954\",\r\n  \"country\": \"Hong Kong\",\r\n  \"imdb_link\": \"https://www.imdb.com/name/nm0000329/\",\r\n  \"as_actor\": 140,\r\n  \"as_producer\": 64,\r\n  \"as_director\": 18,\r\n  \"register_date\": \"08/31/2021\"\r\n}"
+						},
+						"url": {
+							"raw": "{{imdb_url}}/genres",
+							"host": [
+								"{{imdb_url}}"
+							],
+							"path": [
+								"genres"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{imdb_url}}/genres",
+							"host": [
+								"{{imdb_url}}"
+							],
+							"path": [
+								"genres"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"actor\": \"Arnold Schwarzenegger\",\r\n  \"born\": \"July 30, 1947\",\r\n  \"country\": \"Australia\",\r\n  \"imdb_link\": \"https://www.imdb.com/name/nm0000216/\",\r\n  \"as_actor\": 79,\r\n  \"as_producer\": 13,\r\n  \"as_director\": 20\r\n}"
+						},
+						"url": {
+							"raw": "{{imdb_url}}/genres/10",
+							"host": [
+								"{{imdb_url}}"
+							],
+							"path": [
+								"genres",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{imdb_url}}/genres/9",
+							"host": [
+								"{{imdb_url}}"
+							],
+							"path": [
+								"genres",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{imdb_url}}/genres/2",
+							"host": [
+								"{{imdb_url}}"
+							],
+							"path": [
+								"genres",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "imdb_url",
+			"value": "http://localhost:3000"
+		}
+	]
+}
