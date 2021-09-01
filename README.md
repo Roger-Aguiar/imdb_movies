@@ -31,6 +31,8 @@
 ```bash
 $ npm install
 ```
+## Configure the ormconfig.json file
+![image](https://user-images.githubusercontent.com/47781107/131689276-82400ae1-911b-4aa6-82c3-d140108f1cc3.png)
 
 ## Running the app
 
