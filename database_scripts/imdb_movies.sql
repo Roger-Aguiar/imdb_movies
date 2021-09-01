@@ -12,3 +12,13 @@ VALUES('Denzel Washington',
 		61, 13, 5);
         
 SELECT * FROM actor;
+
+-- ******************************************************************************************
+-- Scripts for genre table
+INSERT INTO genre(genre)
+VALUE('Action'), ('Adventure'), ('Comedy'), ('Crime and mistery'),
+      ('Fantasy'), ('Historical'), ('Horror'), ('Romance'),
+      ('Satire'), ('Science fiction'), ('Speculative'), ('Thriller'), 
+      ('Western'), ('Drama'), ('Martial arts');
+      
+SELECT * FROM genre;
