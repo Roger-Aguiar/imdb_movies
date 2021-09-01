@@ -4,12 +4,7 @@ import { Repository } from 'typeorm';
 import { NewMovieDto } from './dto/new-movie.dto';
 import { MovieDto } from './dto/movie.dto';
 import { Movie } from './entities/movie.entity';
-/*import { NewActorDto } from '../actors/dto/new-actor.dto';
-import { ActorDto } from '../actors/dto/actor.dto';
-import { Actor } from '../actors/entities/actor.entity';
-import { NewGenreDto } from '../genres/dto/new-genre.dto';
-import { GenreDto } from '../genres/dto/genre.dto';
-import { Genre } from '../genres/entities/genre.entity';*/
+import { NewActorDto } from '../actors/dto/new-actor.dto';
 
 @Injectable()
 export class MoviesService 
@@ -17,7 +12,7 @@ export class MoviesService
   constructor(@InjectRepository(Movie) private movieRepository: Repository<Movie>){}
 
   async create(newMovieDto: NewMovieDto) 
-  {
+  {    
     this.movieRepository.save(newMovieDto);
   }
 
