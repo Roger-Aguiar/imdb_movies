@@ -24,3 +24,5 @@ VALUE('Action'), ('Adventure'), ('Comedy'), ('Crime and mistery'),
 SELECT * FROM genre;
 
 DELETE FROM genre;
+
+SELECT * FROM movie;
