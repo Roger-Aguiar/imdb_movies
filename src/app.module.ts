@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ActorsModule } from './actors/actors.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ActorsModule } from './actors/actors.module';
 import { MoviesModule } from './movies/movies.module';
 import { GenresModule } from './genres/genres.module';
 
