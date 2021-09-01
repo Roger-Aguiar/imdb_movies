@@ -1,4 +1,5 @@
 import {Actor} from "../../actors/entities/actor.entity";
+import {Genre} from '../../genres/entities/genre.entity';
 import { Entity, Column, PrimaryGeneratedColumn, ManyToMany, JoinTable } from "typeorm";
 
 @Entity()
@@ -24,4 +25,8 @@ export class Movie
     @ManyToMany(() => Actor, {cascade: true})
     @JoinTable()
     actors: Actor[];
+
+    @ManyToMany(() => Genre, {cascade: true})
+    @JoinTable()
+    genre: Genre[];
 }
