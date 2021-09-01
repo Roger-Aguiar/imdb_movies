@@ -32,8 +32,7 @@
 $ npm install
 ```
 ## Configure the ormconfig.json file
-![image](https://user-images.githubusercontent.com/47781107/131688902-17f51d7a-99c8-4c88-b340-3e2b0a6cf1af.png)
-
+![image](https://user-images.githubusercontent.com/47781107/131689276-82400ae1-911b-4aa6-82c3-d140108f1cc3.png)
 
 ## Running the app
 
