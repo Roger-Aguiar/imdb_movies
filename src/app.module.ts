@@ -7,7 +7,7 @@ import { MoviesModule } from './movies/movies.module';
 import { GenresModule } from './genres/genres.module';
 
 @Module({
-  imports: [ActorsModule, TypeOrmModule.forRoot(), MoviesModule, GenresModule],
+  imports: [ActorsModule, MoviesModule, GenresModule, TypeOrmModule.forRoot()],
   controllers: [AppController],
   providers: [AppService],
 })
